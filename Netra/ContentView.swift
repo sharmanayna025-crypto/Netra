@@ -1,23 +1,63 @@
-//
-//  ContentView.swift
-//  Netra
-//
-//  Created by NAYNA SHARMA on 18/08/26.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+
+        TabView {
+
+            // MARK: - Home
+
+            NavigationStack {
+                HomeView()
+            }
+            .tabItem {
+                Label(
+                    "Home",
+                    systemImage: "house.fill"
+                )
+            }
+
+            // MARK: - Privacy
+
+            NavigationStack {
+                PrivacyView()
+            }
+            .tabItem {
+                Label(
+                    "Privacy",
+                    systemImage: "eye.fill"
+                )
+            }
+
+            // MARK: - Security
+
+            NavigationStack {
+                SecurityView()
+            }
+            .tabItem {
+                Label(
+                    "Security",
+                    systemImage: "shield.fill"
+                )
+            }
+
+            // MARK: - Activity
+
+            NavigationStack {
+                ActivityView()
+            }
+            .tabItem {
+                Label(
+                    "Activity",
+                    systemImage: "clock.arrow.circlepath"
+                )
+            }
         }
-        .padding()
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     ContentView()
