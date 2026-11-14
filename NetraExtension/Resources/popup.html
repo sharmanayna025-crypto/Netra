@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Netra</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <main class="wrap">
+
+        <header class="top">
+            <div class="logo" aria-hidden="true">◉</div>
+            <div class="top-text">
+                <h1>Netra</h1>
+                <p id="siteHost">Scanning…</p>
+            </div>
+            <button id="rescan" class="icon-button" type="button" aria-label="Scan again">↻</button>
+        </header>
+
+        <section id="state" class="card state" hidden>
+            <div id="stateTitle" class="state-title"></div>
+            <p id="stateMessage" class="muted"></p>
+        </section>
+
+        <div id="result" hidden>
+
+            <section class="card hero">
+                <div id="ring" class="ring" role="img" aria-label="Privacy score">
+                    <div class="ring-inner">
+                        <span id="score">–</span>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <div id="label" class="label"></div>
+                    <p id="summary" class="muted"></p>
+                </div>
+            </section>
+
+            <h2 class="section">Who is watching</h2>
+            <div id="companies"></div>
+
+            <p id="coverage" class="fineprint"></p>
+
+            <section class="card toggle-row">
+                <label for="record">
+                    <span class="toggle-title">Save visits to Netra</span>
+                    <span class="muted small">Stored on this device only. Hostnames and trackers — never full URLs.</span>
+                </label>
+                <input id="record" type="checkbox" role="switch">
+            </section>
+
+        </div>
+    </main>
+    <script src="popup.js"></script>
+</body>
+</html>

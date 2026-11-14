@@ -1,0 +1,882 @@
+{
+ "version": 1,
+ "updated": "2026-11-12",
+ "scoring": {
+  "base": 100,
+  "categoryPenalty": {
+   "advertising": 10,
+   "social": 8,
+   "analytics": 4,
+   "session_replay": 12,
+   "fingerprinting": 12
+  },
+  "bands": [
+   {
+    "min": 90,
+    "label": "Excellent"
+   },
+   {
+    "min": 75,
+    "label": "Good"
+   },
+   {
+    "min": 50,
+    "label": "Needs Attention"
+   },
+   {
+    "min": 0,
+    "label": "At Risk"
+   }
+  ]
+ },
+ "categories": {
+  "advertising": {
+   "title": "Advertising",
+   "risk": "high",
+   "symbol": "megaphone.fill",
+   "summary": "Builds a profile of your interests so advertisers can target you, often across many sites.",
+   "advice": "Turn on Safari's “Hide IP Address from Trackers” and review ad personalisation in the services you use."
+  },
+  "social": {
+   "title": "Social",
+   "risk": "medium",
+   "symbol": "person.2.fill",
+   "summary": "Lets a social network see which pages you visit, even if you never tap its buttons.",
+   "advice": "Log out of social accounts while browsing, and keep Safari's cross-site tracking prevention on."
+  },
+  "analytics": {
+   "title": "Analytics",
+   "risk": "low",
+   "symbol": "chart.bar.fill",
+   "summary": "Counts visits and measures how people use the site. Usually the least invasive kind of tracking.",
+   "advice": "Generally low risk. A content blocker can remove it if you prefer."
+  },
+  "session_replay": {
+   "title": "Session replay",
+   "risk": "high",
+   "symbol": "record.circle.fill",
+   "summary": "Records taps, scrolls and sometimes what you type so the site can replay your visit.",
+   "advice": "Avoid entering sensitive details on sites that record sessions."
+  },
+  "fingerprinting": {
+   "title": "Fingerprinting",
+   "risk": "high",
+   "symbol": "touchid",
+   "summary": "Identifies your device from its traits (screen, fonts, hardware) without needing cookies.",
+   "advice": "Keep Safari's advanced fingerprinting protection on; it limits what these scripts can read."
+  }
+ },
+ "companies": [
+  {
+   "id": "google",
+   "name": "Google",
+   "summary": "Runs the largest ad and analytics network on the web, so it can link your visits across a huge number of sites.",
+   "owns": [
+    "google.com",
+    "youtube.com",
+    "blogger.com",
+    "blogspot.com",
+    "google.co.in",
+    "gmail.com",
+    "withgoogle.com"
+   ],
+   "trackers": [
+    {
+     "domain": "google-analytics.com",
+     "category": "analytics",
+     "what": "Counts visits and records how you move through a site."
+    },
+    {
+     "domain": "googletagmanager.com",
+     "category": "analytics",
+     "what": "Loads other tracking scripts on the site's behalf."
+    },
+    {
+     "domain": "doubleclick.net",
+     "category": "advertising",
+     "what": "Google's ad-serving network, used to target and measure ads."
+    },
+    {
+     "domain": "googlesyndication.com",
+     "category": "advertising",
+     "what": "Serves Google AdSense ads."
+    },
+    {
+     "domain": "googleadservices.com",
+     "category": "advertising",
+     "what": "Measures whether ad clicks lead to purchases."
+    },
+    {
+     "domain": "googletagservices.com",
+     "category": "advertising",
+     "what": "Loads Google ad tags."
+    },
+    {
+     "domain": "app-measurement.com",
+     "category": "analytics",
+     "what": "Firebase analytics used by apps and some sites."
+    }
+   ]
+  },
+  {
+   "id": "meta",
+   "name": "Meta",
+   "summary": "Owns Facebook, Instagram and WhatsApp; its pixel can tell Meta about your visits even if you have no account.",
+   "owns": [
+    "facebook.com",
+    "instagram.com",
+    "whatsapp.com",
+    "messenger.com",
+    "fb.com",
+    "facebook.net",
+    "meta.com"
+   ],
+   "trackers": [
+    {
+     "domain": "facebook.net",
+     "category": "social",
+     "what": "Facebook SDK and Pixel scripts."
+    },
+    {
+     "domain": "facebook.com",
+     "category": "social",
+     "what": "Facebook plugins and the tracking pixel."
+    }
+   ]
+  },
+  {
+   "id": "microsoft",
+   "name": "Microsoft",
+   "summary": "Operates Clarity (session recording) and Microsoft Advertising conversion tracking.",
+   "owns": [
+    "microsoft.com",
+    "bing.com",
+    "live.com",
+    "office.com",
+    "msn.com",
+    "clarity.ms",
+    "skype.com",
+    "xbox.com",
+    "github.com"
+   ],
+   "trackers": [
+    {
+     "domain": "clarity.ms",
+     "category": "session_replay",
+     "what": "Microsoft Clarity records sessions and heatmaps."
+    },
+    {
+     "domain": "bat.bing.com",
+     "category": "advertising",
+     "what": "Microsoft Advertising conversion tracking."
+    }
+   ]
+  },
+  {
+   "id": "linkedin",
+   "name": "LinkedIn",
+   "summary": "Its Insight Tag links your visits to your professional profile for ad targeting.",
+   "owns": [
+    "linkedin.com",
+    "licdn.com"
+   ],
+   "trackers": [
+    {
+     "domain": "snap.licdn.com",
+     "category": "advertising",
+     "what": "LinkedIn Insight Tag."
+    },
+    {
+     "domain": "px.ads.linkedin.com",
+     "category": "advertising",
+     "what": "LinkedIn ad conversion pixel."
+    },
+    {
+     "domain": "ads.linkedin.com",
+     "category": "advertising",
+     "what": "LinkedIn advertising."
+    },
+    {
+     "domain": "linkedin.com",
+     "category": "social",
+     "what": "LinkedIn plugins and share buttons."
+    }
+   ]
+  },
+  {
+   "id": "x",
+   "name": "X (Twitter)",
+   "summary": "Ad pixels and embedded posts can report your visit back to X.",
+   "owns": [
+    "twitter.com",
+    "x.com",
+    "t.co"
+   ],
+   "trackers": [
+    {
+     "domain": "static.ads-twitter.com",
+     "category": "advertising",
+     "what": "X ad pixel."
+    },
+    {
+     "domain": "ads-twitter.com",
+     "category": "advertising",
+     "what": "X advertising."
+    },
+    {
+     "domain": "analytics.twitter.com",
+     "category": "advertising",
+     "what": "X conversion tracking."
+    },
+    {
+     "domain": "platform.twitter.com",
+     "category": "social",
+     "what": "Embedded posts and share buttons."
+    }
+   ]
+  },
+  {
+   "id": "tiktok",
+   "name": "TikTok",
+   "summary": "The TikTok pixel measures ads and builds interest profiles.",
+   "owns": [
+    "tiktok.com",
+    "tiktokv.com",
+    "bytedance.com"
+   ],
+   "trackers": [
+    {
+     "domain": "analytics.tiktok.com",
+     "category": "advertising",
+     "what": "TikTok pixel."
+    },
+    {
+     "domain": "tiktok.com",
+     "category": "social",
+     "what": "TikTok embeds and plugins."
+    }
+   ]
+  },
+  {
+   "id": "pinterest",
+   "name": "Pinterest",
+   "summary": "Pinterest's tag tracks visits and purchases for ad targeting.",
+   "owns": [
+    "pinterest.com"
+   ],
+   "trackers": [
+    {
+     "domain": "ct.pinterest.com",
+     "category": "advertising",
+     "what": "Pinterest conversion tag."
+    },
+    {
+     "domain": "pinterest.com",
+     "category": "social",
+     "what": "Pin buttons and widgets."
+    }
+   ]
+  },
+  {
+   "id": "snap",
+   "name": "Snap",
+   "summary": "Snap's pixel reports visits and purchases to Snapchat advertising.",
+   "owns": [
+    "snapchat.com"
+   ],
+   "trackers": [
+    {
+     "domain": "sc-static.net",
+     "category": "advertising",
+     "what": "Snap pixel script."
+    },
+    {
+     "domain": "tr.snapchat.com",
+     "category": "advertising",
+     "what": "Snap conversion tracking."
+    }
+   ]
+  },
+  {
+   "id": "amazon",
+   "name": "Amazon",
+   "summary": "Amazon's ad system follows shopping and browsing interests across sites.",
+   "owns": [
+    "amazon.com",
+    "amazon.in",
+    "amazon.co.uk",
+    "amazon.de"
+   ],
+   "trackers": [
+    {
+     "domain": "amazon-adsystem.com",
+     "category": "advertising",
+     "what": "Amazon advertising network."
+    }
+   ]
+  },
+  {
+   "id": "adobe",
+   "name": "Adobe",
+   "summary": "Adobe Analytics and Audience Manager track behaviour and build audience segments.",
+   "owns": [
+    "adobe.com"
+   ],
+   "trackers": [
+    {
+     "domain": "omtrdc.net",
+     "category": "analytics",
+     "what": "Adobe Analytics data collection."
+    },
+    {
+     "domain": "2o7.net",
+     "category": "analytics",
+     "what": "Adobe Analytics (legacy domain)."
+    },
+    {
+     "domain": "adobedtm.com",
+     "category": "analytics",
+     "what": "Adobe's tag manager."
+    },
+    {
+     "domain": "demdex.net",
+     "category": "advertising",
+     "what": "Adobe Audience Manager cross-site ID."
+    },
+    {
+     "domain": "everesttech.net",
+     "category": "advertising",
+     "what": "Adobe advertising cloud."
+    }
+   ]
+  },
+  {
+   "id": "oracle",
+   "name": "Oracle",
+   "summary": "Oracle's BlueKai sells audience data used to target ads.",
+   "owns": [
+    "oracle.com"
+   ],
+   "trackers": [
+    {
+     "domain": "bluekai.com",
+     "category": "advertising",
+     "what": "Oracle data marketplace tracking."
+    }
+   ]
+  },
+  {
+   "id": "thetradedesk",
+   "name": "The Trade Desk",
+   "summary": "An ad-buying platform that tracks you across sites to bid on ads.",
+   "owns": [
+    "thetradedesk.com"
+   ],
+   "trackers": [
+    {
+     "domain": "adsrvr.org",
+     "category": "advertising",
+     "what": "Ad bidding and cross-site ID."
+    }
+   ]
+  },
+  {
+   "id": "xandr",
+   "name": "Xandr (Microsoft)",
+   "summary": "An ad exchange that matches your visit to bids from advertisers.",
+   "owns": [
+    "xandr.com",
+    "appnexus.com"
+   ],
+   "trackers": [
+    {
+     "domain": "adnxs.com",
+     "category": "advertising",
+     "what": "Ad exchange and user matching."
+    }
+   ]
+  },
+  {
+   "id": "criteo",
+   "name": "Criteo",
+   "summary": "Retargeting: follows you to show ads for products you looked at.",
+   "owns": [
+    "criteo.com"
+   ],
+   "trackers": [
+    {
+     "domain": "criteo.com",
+     "category": "advertising",
+     "what": "Retargeting ads."
+    },
+    {
+     "domain": "criteo.net",
+     "category": "advertising",
+     "what": "Retargeting ads."
+    }
+   ]
+  },
+  {
+   "id": "taboola",
+   "name": "Taboola",
+   "summary": "Recommends sponsored content based on your browsing.",
+   "owns": [
+    "taboola.com"
+   ],
+   "trackers": [
+    {
+     "domain": "taboola.com",
+     "category": "advertising",
+     "what": "Content recommendation ads."
+    }
+   ]
+  },
+  {
+   "id": "outbrain",
+   "name": "Outbrain",
+   "summary": "Recommends sponsored content based on your browsing.",
+   "owns": [
+    "outbrain.com"
+   ],
+   "trackers": [
+    {
+     "domain": "outbrain.com",
+     "category": "advertising",
+     "what": "Content recommendation ads."
+    }
+   ]
+  },
+  {
+   "id": "quantcast",
+   "name": "Quantcast",
+   "summary": "Audience measurement and ad targeting.",
+   "owns": [
+    "quantcast.com"
+   ],
+   "trackers": [
+    {
+     "domain": "quantserve.com",
+     "category": "advertising",
+     "what": "Audience measurement pixel."
+    }
+   ]
+  },
+  {
+   "id": "lotame",
+   "name": "Lotame",
+   "summary": "A data exchange that builds audience profiles.",
+   "owns": [
+    "lotame.com"
+   ],
+   "trackers": [
+    {
+     "domain": "crwdcntrl.net",
+     "category": "advertising",
+     "what": "Audience data collection."
+    }
+   ]
+  },
+  {
+   "id": "liveramp",
+   "name": "LiveRamp",
+   "summary": "Connects your identity across devices and data sets for advertisers.",
+   "owns": [
+    "liveramp.com"
+   ],
+   "trackers": [
+    {
+     "domain": "rlcdn.com",
+     "category": "advertising",
+     "what": "Identity resolution."
+    }
+   ]
+  },
+  {
+   "id": "magnite",
+   "name": "Magnite",
+   "summary": "A programmatic ad exchange.",
+   "owns": [
+    "magnite.com",
+    "rubiconproject.com"
+   ],
+   "trackers": [
+    {
+     "domain": "rubiconproject.com",
+     "category": "advertising",
+     "what": "Ad exchange."
+    }
+   ]
+  },
+  {
+   "id": "pubmatic",
+   "name": "PubMatic",
+   "summary": "A programmatic ad exchange.",
+   "owns": [
+    "pubmatic.com"
+   ],
+   "trackers": [
+    {
+     "domain": "pubmatic.com",
+     "category": "advertising",
+     "what": "Ad exchange."
+    }
+   ]
+  },
+  {
+   "id": "openx",
+   "name": "OpenX",
+   "summary": "A programmatic ad exchange.",
+   "owns": [
+    "openx.com"
+   ],
+   "trackers": [
+    {
+     "domain": "openx.net",
+     "category": "advertising",
+     "what": "Ad exchange."
+    }
+   ]
+  },
+  {
+   "id": "indexexchange",
+   "name": "Index Exchange",
+   "summary": "A programmatic ad exchange.",
+   "owns": [
+    "indexexchange.com"
+   ],
+   "trackers": [
+    {
+     "domain": "casalemedia.com",
+     "category": "advertising",
+     "what": "Ad exchange."
+    }
+   ]
+  },
+  {
+   "id": "comscore",
+   "name": "Comscore",
+   "summary": "Audience measurement that follows panel and site traffic.",
+   "owns": [
+    "comscore.com"
+   ],
+   "trackers": [
+    {
+     "domain": "scorecardresearch.com",
+     "category": "analytics",
+     "what": "Audience measurement."
+    }
+   ]
+  },
+  {
+   "id": "hotjar",
+   "name": "Hotjar",
+   "summary": "Records sessions and heatmaps of taps and scrolls.",
+   "owns": [
+    "hotjar.com"
+   ],
+   "trackers": [
+    {
+     "domain": "hotjar.com",
+     "category": "session_replay",
+     "what": "Session recordings and heatmaps."
+    },
+    {
+     "domain": "hotjar.io",
+     "category": "session_replay",
+     "what": "Session recordings and heatmaps."
+    }
+   ]
+  },
+  {
+   "id": "fullstory",
+   "name": "FullStory",
+   "summary": "Records full sessions so the site can replay what you did.",
+   "owns": [
+    "fullstory.com"
+   ],
+   "trackers": [
+    {
+     "domain": "fullstory.com",
+     "category": "session_replay",
+     "what": "Session replay."
+    }
+   ]
+  },
+  {
+   "id": "mouseflow",
+   "name": "Mouseflow",
+   "summary": "Records sessions and heatmaps.",
+   "owns": [
+    "mouseflow.com"
+   ],
+   "trackers": [
+    {
+     "domain": "mouseflow.com",
+     "category": "session_replay",
+     "what": "Session replay and heatmaps."
+    }
+   ]
+  },
+  {
+   "id": "luckyorange",
+   "name": "Lucky Orange",
+   "summary": "Records sessions and live chat visitors.",
+   "owns": [
+    "luckyorange.com"
+   ],
+   "trackers": [
+    {
+     "domain": "luckyorange.com",
+     "category": "session_replay",
+     "what": "Session replay."
+    },
+    {
+     "domain": "luckyorange.net",
+     "category": "session_replay",
+     "what": "Session replay."
+    }
+   ]
+  },
+  {
+   "id": "logrocket",
+   "name": "LogRocket",
+   "summary": "Records sessions for debugging, including page content.",
+   "owns": [
+    "logrocket.com"
+   ],
+   "trackers": [
+    {
+     "domain": "logrocket.com",
+     "category": "session_replay",
+     "what": "Session replay."
+    },
+    {
+     "domain": "lr-ingest.io",
+     "category": "session_replay",
+     "what": "Session replay data."
+    }
+   ]
+  },
+  {
+   "id": "smartlook",
+   "name": "Smartlook",
+   "summary": "Records sessions and events.",
+   "owns": [
+    "smartlook.com"
+   ],
+   "trackers": [
+    {
+     "domain": "smartlook.com",
+     "category": "session_replay",
+     "what": "Session replay."
+    }
+   ]
+  },
+  {
+   "id": "crazyegg",
+   "name": "Crazy Egg",
+   "summary": "Heatmaps and recordings of clicks and scrolls.",
+   "owns": [
+    "crazyegg.com"
+   ],
+   "trackers": [
+    {
+     "domain": "crazyegg.com",
+     "category": "session_replay",
+     "what": "Heatmaps and recordings."
+    }
+   ]
+  },
+  {
+   "id": "mixpanel",
+   "name": "Mixpanel",
+   "summary": "Product analytics that tracks individual user actions.",
+   "owns": [
+    "mixpanel.com"
+   ],
+   "trackers": [
+    {
+     "domain": "mixpanel.com",
+     "category": "analytics",
+     "what": "Event analytics."
+    }
+   ]
+  },
+  {
+   "id": "segment",
+   "name": "Segment",
+   "summary": "Collects behaviour and forwards it to many other services.",
+   "owns": [
+    "segment.com"
+   ],
+   "trackers": [
+    {
+     "domain": "segment.io",
+     "category": "analytics",
+     "what": "Data collection hub."
+    },
+    {
+     "domain": "segment.com",
+     "category": "analytics",
+     "what": "Data collection hub."
+    }
+   ]
+  },
+  {
+   "id": "amplitude",
+   "name": "Amplitude",
+   "summary": "Product analytics that tracks individual user actions.",
+   "owns": [
+    "amplitude.com"
+   ],
+   "trackers": [
+    {
+     "domain": "amplitude.com",
+     "category": "analytics",
+     "what": "Event analytics."
+    }
+   ]
+  },
+  {
+   "id": "heap",
+   "name": "Heap",
+   "summary": "Automatically captures every click and tap.",
+   "owns": [
+    "heap.io"
+   ],
+   "trackers": [
+    {
+     "domain": "heapanalytics.com",
+     "category": "analytics",
+     "what": "Auto-capture analytics."
+    }
+   ]
+  },
+  {
+   "id": "hubspot",
+   "name": "HubSpot",
+   "summary": "Marketing analytics that ties visits to contacts.",
+   "owns": [
+    "hubspot.com"
+   ],
+   "trackers": [
+    {
+     "domain": "hs-analytics.net",
+     "category": "analytics",
+     "what": "Visitor tracking."
+    },
+    {
+     "domain": "hs-scripts.com",
+     "category": "analytics",
+     "what": "HubSpot tracking loader."
+    },
+    {
+     "domain": "hsadspixel.net",
+     "category": "advertising",
+     "what": "HubSpot ad pixel."
+    }
+   ]
+  },
+  {
+   "id": "yandex",
+   "name": "Yandex",
+   "summary": "Yandex Metrica analytics with session replay features.",
+   "owns": [
+    "yandex.ru",
+    "yandex.com"
+   ],
+   "trackers": [
+    {
+     "domain": "mc.yandex.ru",
+     "category": "analytics",
+     "what": "Yandex Metrica."
+    },
+    {
+     "domain": "metrica.yandex.com",
+     "category": "analytics",
+     "what": "Yandex Metrica."
+    }
+   ]
+  },
+  {
+   "id": "chartbeat",
+   "name": "Chartbeat",
+   "summary": "Real-time reading analytics for publishers.",
+   "owns": [
+    "chartbeat.com"
+   ],
+   "trackers": [
+    {
+     "domain": "chartbeat.com",
+     "category": "analytics",
+     "what": "Reader analytics."
+    }
+   ]
+  },
+  {
+   "id": "optimizely",
+   "name": "Optimizely",
+   "summary": "A/B testing that tracks how you respond to variants.",
+   "owns": [
+    "optimizely.com"
+   ],
+   "trackers": [
+    {
+     "domain": "optimizely.com",
+     "category": "analytics",
+     "what": "Experiment tracking."
+    }
+   ]
+  },
+  {
+   "id": "cloudflare",
+   "name": "Cloudflare",
+   "summary": "Privacy-friendlier web analytics from the site's CDN.",
+   "owns": [
+    "cloudflare.com"
+   ],
+   "trackers": [
+    {
+     "domain": "cloudflareinsights.com",
+     "category": "analytics",
+     "what": "Web analytics."
+    }
+   ]
+  },
+  {
+   "id": "sharethis",
+   "name": "ShareThis",
+   "summary": "Share buttons that also collect browsing data.",
+   "owns": [
+    "sharethis.com"
+   ],
+   "trackers": [
+    {
+     "domain": "sharethis.com",
+     "category": "social",
+     "what": "Share buttons and tracking."
+    }
+   ]
+  },
+  {
+   "id": "fingerprint",
+   "name": "Fingerprint",
+   "summary": "Identifies devices from hardware and browser traits for fraud and tracking.",
+   "owns": [
+    "fingerprint.com"
+   ],
+   "trackers": [
+    {
+     "domain": "fingerprint.com",
+     "category": "fingerprinting",
+     "what": "Device fingerprinting."
+    },
+    {
+     "domain": "fpjs.io",
+     "category": "fingerprinting",
+     "what": "Device fingerprinting."
+    }
+   ]
+  }
+ ]
+}

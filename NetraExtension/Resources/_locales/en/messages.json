@@ -1,0 +1,10 @@
+{
+    "extension_name": {
+        "message": "Netra",
+        "description": "The display name for the extension."
+    },
+    "extension_description": {
+        "message": "See who is tracking you on every website. Netra scans pages on your device, explains each tracker in plain language and gives every site a privacy score.",
+        "description": "Description of what the extension does."
+    }
+}
